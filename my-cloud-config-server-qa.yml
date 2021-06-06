@@ -1,0 +1,4 @@
+eureka:
+    client:
+        service-url:
+            default-zone: http://3.80.220.139:8761/eureka

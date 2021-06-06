@@ -1,0 +1,21 @@
+spring:
+   application:
+      name: my-cloud-config-server
+   rabbitmq:
+      addresses: amqps://xrjbysaw:ESAki5A7fkGit0EMD3q2N6Z7V_KCK69J@fox.rmq.cloudamqp.com/xrjbysaw
+eureka:
+   client:
+      service-url:
+         defaultZone: http://localhost:8762/eureka
+      healthcheck:
+         enabled: true
+logging:
+   level:
+      root: DEBUG
+   pattern:
+#org.springframework.cloud: DEBUG
+      console: '%-5level [%thread]-${PID} %logger{36}  - %msg%n'
+# ----------------
+# Orphan comments:
+# ----------------
+# Was at begin of line:28 :#http://localhost:2345/actuator/

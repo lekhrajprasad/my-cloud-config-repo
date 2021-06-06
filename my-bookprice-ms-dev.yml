@@ -1,0 +1,44 @@
+management:
+    security:
+        enabled: false
+    endpoints:
+        web:
+            exposure:
+                include: '*' #Enabling actuator endpoint
+spring:
+    rabbitmq: #rabbit mq required to generate event by spring cloud bus, it will be default. If wanted to use kafka or others broker then some bean/code level changes required in miscroservices
+        addresses: amqps://xrjbysaw:ESAki5A7fkGit0EMD3q2N6Z7V_KCK69J@fox.rmq.cloudamqp.com/xrjbysaw
+    boot.admin.client.url: http://localhost:5555 #Boot Admin configuration, Actuator Admin is running on port 8080
+    datasource:
+        hikari:
+            connectionTimeout: 20000
+            maximumPoolSize: 5
+        password: lpras 
+        url: "jdbc:mysql://localhost:3306/mybookpricedb"
+        username: lpras
+    jpa:
+        show-sql: true
+        hibernate.ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: true
+    application:
+        name: my-bookprice-ms
+eureka:
+    client:
+        service-url:
+            default-zone: http://localhost:8761/eureka
+        healthcheck:
+            enabled: true
+
+logging:
+    level:
+        root: DEBUG
+        com.lpras: DEBUG
+        de.codecentric: WARN
+    pattern:
+        console: '%-5level [%thread]-${PID} %logger{36}  - %msg%n'
+bookprice:
+    cloudconfig:
+        msgupdated: Book Serach Default Message Update 1.1!!
+
